@@ -23,8 +23,8 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-5: Display the cipher text obtained above.
 
 
-PROGRAM :-
-~~~
+### PROGRAM :-
+```
 #include <stdio.h>
 #include <stdlib.h>
 void caesarEncrypt(char *text, int key) {
@@ -54,8 +54,12 @@ int main() {
  printf("Decrypted Message: %s", message);
  return 0;
 }
-~~~
-OUTPUT :-
+```
+
+### OUTPUT :-
+
 ![image](https://github.com/user-attachments/assets/d4fcddfe-e938-4d75-8d83-bb6239757369)
 
+### RESULT :-
 
+The program is executed successfully
