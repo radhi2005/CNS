@@ -1,5 +1,4 @@
 ## EX. NO: 1 : IMPLEMENTATION OF CAESAR CIPHER
- 
 
 ## AIM:
 
@@ -13,10 +12,7 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 ## EXAMPLE:
 
-
-
 ![image](https://github.com/Hemamanigandan/CNS/assets/149653568/eb9c6c43-8c80-4cdd-b9d4-91705a311c79)
-
 
 ## ALGORITHM:
 
@@ -28,7 +24,38 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 
 PROGRAM :-
-
-
-
+~~~
+#include <stdio.h>
+#include <stdlib.h>
+void caesarEncrypt(char *text, int key) {
+ for (int i = 0; text[i] != '\0'; i++) {
+ char c = text[i];
+ if (c >= 'A' && c <= 'Z') {
+ text[i] = ((c - 'A' + key) % 26 + 26) % 26 + 'A';
+ }
+ else if (c >= 'a' && c <= 'z') {
+ text[i] = ((c - 'a' + key) % 26 + 26) % 26 + 'a';
+ }
+ }
+}
+void caesarDecrypt(char *text, int key) {
+ caesarEncrypt(text, -key);
+}
+int main() {
+ char message[100]; 
+ int key;
+ printf("Enter the message to encrypt: ");
+ fgets(message, sizeof(message), stdin); 
+ printf("Enter the Caesar Cipher key (an integer): ");
+ scanf("%d", &key); // Read the key from the user
+ caesarEncrypt(message, key);
+ printf("Encrypted Message: %s", message);
+ caesarDecrypt(message, key);
+ printf("Decrypted Message: %s", message);
+ return 0;
+}
+~~~
 OUTPUT :-
+![image](https://github.com/user-attachments/assets/d4fcddfe-e938-4d75-8d83-bb6239757369)
+
+
